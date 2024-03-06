@@ -21,8 +21,11 @@ public class CustomListTest {
      */
     public CustomList MockCityList(){
         list = new CustomList(null,new ArrayList<>());
+        list.addCity(new City("Edmonton", "Alberta"));
         return list;
     }
+
+
 
     /**
      * get the size of the list
