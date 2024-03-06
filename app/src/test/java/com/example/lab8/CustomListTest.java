@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 //import org.junit.Before;
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -47,6 +48,13 @@ public class CustomListTest {
         assertTrue(cityList.hasCity((City) cityList.getCities().get(0)));
         City city = new City("Yellowknife", "Northwest Territories");
         assertFalse(cityList.hasCity(city));
+    }
+
+    @Test
+    public void testDelete() {
+        CustomList cityList = MockCityList();
+        cityList.delete((City) cityList.getCities().get(0));
+        Assert.assertEquals(0, cityList.getCities().size());
     }
 
 }
